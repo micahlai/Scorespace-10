@@ -1641,9 +1641,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb9584531bf78b4c8557a85d776a74b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degreesPerSecond: 45
-  amplitude: 0.8
-  frequency: 1.2
+  degreePerSecondRange: {x: 30, y: 45}
+  amplitudeRange: {x: 0.5, y: 0.8}
+  frequencyRange: {x: 1, y: 2}
   explode: {fileID: 0}
   OnCollected:
     m_PersistentCalls:
@@ -1673,7 +1673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 0
-  rewardAmount: {x: 5, y: 10}
+  rewardAmount: {x: 2, y: 5}
   arrows:
   - {fileID: 5921169241844863678}
   - {fileID: 5921169242484795670}

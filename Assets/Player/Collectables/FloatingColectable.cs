@@ -6,9 +6,12 @@ using System.Collections;
 public class FloatingColectable : MonoBehaviour
 {
     // User Inputs
-    public float degreesPerSecond = 15.0f;
-    public float amplitude = 0.5f;
-    public float frequency = 1f;
+    public Vector2 degreePerSecondRange;
+     float degreesPerSecond = 15.0f;
+    public Vector2 amplitudeRange;
+     float amplitude = 0.5f;
+    public Vector2 frequencyRange;
+     float frequency = 1f;
 
     public GameObject explode;
     public static GameObject explodeParticle;
@@ -26,6 +29,9 @@ public class FloatingColectable : MonoBehaviour
         {
             explodeParticle = explode;
         }
+        degreesPerSecond = Random.Range(degreePerSecondRange.x, degreePerSecondRange.y);
+        amplitude = Random.Range(amplitudeRange.x, amplitudeRange.y);
+        frequency = Random.Range(frequencyRange.x, frequencyRange.y);
     }
     void Start()
     {

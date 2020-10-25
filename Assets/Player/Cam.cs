@@ -10,6 +10,9 @@ public class Cam : MonoBehaviour
     public float horizontalScroll;
     public bool locked;
     public float scrollScale = 3;
+    public Vector2 maxScroll;
+    float lockX;
+    public Transform pelvis;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,19 +21,39 @@ public class Cam : MonoBehaviour
     }
     void FixedUpdate()
     {
+        horizontalScroll += Input.mouseScrollDelta.y * scrollScale;
         if (locked)
         {
-            player = new Vector3(FindObjectOfType<Car>().transform.position.x, FindObjectOfType<Car>().transform.position.y, 0);
+            if (FindObjectOfType<Car>().dead)
+            {
+                player = pelvis.position;
+            }
+            else
+            {
+                player = new Vector3(FindObjectOfType<Car>().transform.position.x, FindObjectOfType<Car>().transform.position.y, 0);
+            }
         }
         else
         {
-            horizontalScroll += Input.mouseScrollDelta.y * scrollScale;
+            if(transform.position.x - FindObjectOfType<Car>().transform.position.x < maxScroll.x || transform.position.x - FindObjectOfType<Car>().transform.position.x > maxScroll.y)
+            {
+                locked = true;
+                horizontalScroll = 0;
+            }
         }
-        if(Mathf.Abs(Input.mouseScrollDelta.y) > 0)
+        if (horizontalScroll + player.x > maxScroll.y + FindObjectOfType<Car>().transform.position.x)
+        {
+            horizontalScroll = maxScroll.y;
+        }
+        else if (horizontalScroll + player.x < maxScroll.x + FindObjectOfType<Car>().transform.position.x)
+        {
+            horizontalScroll = maxScroll.x;
+        }
+        if (Mathf.Abs(Input.mouseScrollDelta.y) > 0)
         {
             locked = false;
+            lockX = transform.position.x;
         }
-        
         Vector3 o = offset + new Vector3(horizontalScroll, 0, 0);
         Vector3 desiredPosition = player + o;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);

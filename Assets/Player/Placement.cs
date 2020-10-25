@@ -15,6 +15,10 @@ public class Placement : MonoBehaviour
     {
         highlight = FindObjectOfType<Highlight>();
         main = this;
+        for (int i = 0; i < values.Length; i++)
+        {
+            values[i] = 10;
+        }
     }
 
     // Update is called once per frame
@@ -22,13 +26,15 @@ public class Placement : MonoBehaviour
     {
         FindObjectOfType<DirectionSelection>().status = values;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        highlight.pointDirection = currentDirection;
         RaycastHit hit;
         if(Physics.Raycast(ray, out hit))
         {
+            
             if (hit.collider.gameObject.CompareTag("Floor"))
             {
                 highlight.position = NearestGridPosition(hit.point);
-                highlight.pointDirection = currentDirection;
+                
             }
         }
         if (Input.GetMouseButtonDown(0))
@@ -40,11 +46,11 @@ public class Placement : MonoBehaviour
                 {
                     hit.collider.GetComponent<FloatingColectable>().OnCollected.Invoke();
                 }
-                else if(hit.collider.gameObject.CompareTag("Floor"))
+                else
                 {
                     if (values[IntFromDirection(currentDirection)] > 0)
                     {
-                        DirectionalControl d = PlaceDirectionalControl(directionPrefab, highlight.transform.position);
+                        DirectionalControl d = PlaceDirectionalControl(directionPrefab, highlight.position);
                         if (d != null)
                         {
                             d.pointDirection = currentDirection;

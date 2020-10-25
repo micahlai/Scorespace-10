@@ -8,13 +8,11 @@ public class Ground : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startPos = transform.position;
+        FindObjectOfType<UnityEngine.AI.NavMeshSurface>().BuildNavMesh();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 pos = FindObjectOfType<Car>().transform.position;
-        transform.position = new Vector3(pos.x, startPos.y, startPos.z);
     }
 }

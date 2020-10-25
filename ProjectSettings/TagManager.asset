@@ -6,6 +6,9 @@ TagManager:
   tags:
   - DirectionControl
   - Floor
+  - Obstacle
+  - Street
+  - Car
   layers:
   - Default
   - TransparentFX
@@ -16,7 +19,7 @@ TagManager:
   - 
   - 
   - Collectable
-  - 
+  - Car
   - 
   - 
   - 

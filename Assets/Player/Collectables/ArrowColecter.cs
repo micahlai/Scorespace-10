@@ -14,7 +14,7 @@ public class ArrowColecter : MonoBehaviour
     void Start()
     {
         int i = 0;
-        int r = Mathf.RoundToInt(Random.Range(1, 9));
+        int r = Mathf.RoundToInt(Random.Range(0.5f, 9.4f));
         if (r == 1 || r == 2)
         {
             direction = DirectionCollectable.Down;
@@ -83,10 +83,10 @@ public class ArrowColecter : MonoBehaviour
             Placement.main.values[3] += amount;
         }else if(direction == DirectionCollectable.All)
         {
-            Placement.main.values[0] += amount;
-            Placement.main.values[1] += amount;
-            Placement.main.values[2] += amount;
-            Placement.main.values[3] += amount;
+            Placement.main.values[0] += amount / 2;
+            Placement.main.values[1] += amount / 2;
+            Placement.main.values[2] += amount / 2;
+            Placement.main.values[3] += amount / 2;
 
         }
     }
