@@ -61,8 +61,12 @@ public class Cam : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(2) || Input.GetKey(KeyCode.Space))
         {
+            locked = true;
+            horizontalScroll = 0;
+        }
+        if (FindObjectOfType<Car>().dead) {
             locked = true;
             horizontalScroll = 0;
         }

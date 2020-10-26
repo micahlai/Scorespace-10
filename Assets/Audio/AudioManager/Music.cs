@@ -14,4 +14,6 @@ public class Music
 
     public bool PlayOnAwake = false;
     public bool loop = true;
+    [HideInInspector]
+    public float currentVolume;
 }

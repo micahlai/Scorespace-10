@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Ground
   prefab: {fileID: 6663506769562537854, guid: f736bc85f7f16084cbc6a1c5a384349e, type: 3}
   spawnFrequency: 30
-  spawnRange: {x: 0, y: 0}
+  spawnRange: {x: 9.3, y: 9.3}
   yLevel: -0.41

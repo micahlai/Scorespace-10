@@ -9,6 +9,9 @@ TagManager:
   - Obstacle
   - Street
   - Car
+  - Restrict
+  - Streetlamp
+  - Building
   layers:
   - Default
   - TransparentFX

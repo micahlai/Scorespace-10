@@ -8,6 +8,8 @@ public class Placement : MonoBehaviour
     public DirectionalControl.Direction currentDirection;
     public Highlight highlight;
     public float[] values;
+    public GameObject Dust;
+    public GameObject burst;
     [HideInInspector]
     public static Placement main;
     // Start is called before the first frame update
@@ -37,7 +39,12 @@ public class Placement : MonoBehaviour
                 
             }
         }
-        if (Input.GetMouseButtonDown(0))
+        bool b = true;
+        if(FindObjectOfType<PauseUI>() != null)
+        {
+            b = !FindObjectOfType<PauseUI>().isPaused;
+        }
+        if (Input.GetMouseButtonDown(0) && b)
         {
             
             if(Physics.Raycast(ray, out hit))
@@ -66,17 +73,33 @@ public class Placement : MonoBehaviour
             }
                
         }
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetMouseButtonDown(1) && b)
+        {
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.GetComponent<DirectionalControl>() != null)
+                {
+                    ParticleSystem p = Instantiate(Dust, hit.collider.GetComponent<DirectionalControl>().transform.position, Quaternion.Euler(new Vector3(-90, 0, 0))).GetComponent<ParticleSystem>();
+                    p.Play();
+                    Destroy(p.gameObject, 5);
+                    FindObjectOfType<AudioManager>().Play("Remove");
+                    Destroy(hit.collider.GetComponent<DirectionalControl>().gameObject);
+                }
+            }
+
+        }
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             ChangeSelctionDirection(DirectionalControl.Direction.Up);
-        }else if (Input.GetKeyDown(KeyCode.S))
+        }else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             ChangeSelctionDirection(DirectionalControl.Direction.Down);
-        }else if (Input.GetKeyDown(KeyCode.A))
+        }else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             ChangeSelctionDirection(DirectionalControl.Direction.Left);
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             ChangeSelctionDirection(DirectionalControl.Direction.Right);
         }
@@ -91,6 +114,7 @@ public class Placement : MonoBehaviour
         if (!existingControl)
         {
             DirectionalControl d = Instantiate(directionPrefab, NearestGridPosition(position), Quaternion.identity).GetComponent<DirectionalControl>();
+            FindObjectOfType<AudioManager>().Play("PlaceArrow");
             return d;
         }
         else

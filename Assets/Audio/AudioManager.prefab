@@ -1,0 +1,340 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6694987657434973902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6694987657434973901}
+  - component: {fileID: 6694987657434973900}
+  - component: {fileID: 6694987657434973899}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6694987657434973901
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6694987657434973902}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0798351, y: -7.449279, z: 8.013426}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6694987657434973900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6694987657434973902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28d5eafbad408df4bb4bb83eee5aaae3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  master: {fileID: 24100000, guid: 90f23edef13de694da0fa7ac56ffd5e1, type: 2}
+  sounds:
+  - name: MessUp1
+    clip: {fileID: 8300000, guid: 2f0a15f1b6f372245b25d99adc55ca7f, type: 3}
+    PlayOnAwake: 0
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.5
+    loop: 0
+    mixerGroup: {fileID: 6714807091100367547, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+      type: 2}
+    source: {fileID: 0}
+  - name: MessUp2
+    clip: {fileID: 8300000, guid: 44d302a8f7cf18747b2f43f9213827b2, type: 3}
+    PlayOnAwake: 0
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.5
+    loop: 0
+    mixerGroup: {fileID: 6714807091100367547, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+      type: 2}
+    source: {fileID: 0}
+  - name: MessUp3
+    clip: {fileID: 8300000, guid: 97fdb6ad175cc3b45b92d4357c22b75e, type: 3}
+    PlayOnAwake: 0
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.5
+    loop: 0
+    mixerGroup: {fileID: 6714807091100367547, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+      type: 2}
+    source: {fileID: 0}
+  - name: MessUp4
+    clip: {fileID: 8300000, guid: bdf6367b51221e8468dee43261da861a, type: 3}
+    PlayOnAwake: 0
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.5
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: MessUp5
+    clip: {fileID: 8300000, guid: 6333f148350ddfb45871b55d1f53ddea, type: 3}
+    PlayOnAwake: 0
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.5
+    loop: 0
+    mixerGroup: {fileID: 6714807091100367547, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+      type: 2}
+    source: {fileID: 0}
+  - name: PlaceArrow
+    clip: {fileID: 8300000, guid: 040c900af1140004bae291ef603b2063, type: 3}
+    PlayOnAwake: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.5
+    loop: 0
+    mixerGroup: {fileID: 6714807091100367547, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+      type: 2}
+    source: {fileID: 0}
+  - name: Up
+    clip: {fileID: 8300000, guid: b1a5c572cb0991c4fb43e941d0d7a686, type: 3}
+    PlayOnAwake: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 6714807091100367547, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+      type: 2}
+    source: {fileID: 0}
+  - name: Down
+    clip: {fileID: 8300000, guid: cdee5dfc361419e4cae698c93302f8bb, type: 3}
+    PlayOnAwake: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 6714807091100367547, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+      type: 2}
+    source: {fileID: 0}
+  - name: Left
+    clip: {fileID: 8300000, guid: bdb64c261dc306d4d8ca9d64a5f55319, type: 3}
+    PlayOnAwake: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 6714807091100367547, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+      type: 2}
+    source: {fileID: 0}
+  - name: Right
+    clip: {fileID: 8300000, guid: b47bea7aae71fab4fb6abd8844304a8f, type: 3}
+    PlayOnAwake: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 6714807091100367547, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+      type: 2}
+    source: {fileID: 0}
+  - name: Collect1
+    clip: {fileID: 8300000, guid: ede396b4130e07445a59ec9866802731, type: 3}
+    PlayOnAwake: 0
+    volume: 0.5
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 6714807091100367547, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+      type: 2}
+    source: {fileID: 0}
+  - name: Collect2
+    clip: {fileID: 8300000, guid: fd50197c0c8150f4fb33dacaa81069bd, type: 3}
+    PlayOnAwake: 0
+    volume: 0.5
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 6714807091100367547, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+      type: 2}
+    source: {fileID: 0}
+  - name: Collect3
+    clip: {fileID: 8300000, guid: 2aee2f59a0859ae4ca8fde83c6f202ca, type: 3}
+    PlayOnAwake: 0
+    volume: 0.5
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 6714807091100367547, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+      type: 2}
+    source: {fileID: 0}
+  - name: Collect4
+    clip: {fileID: 8300000, guid: 6b49c12b6ed7d734f97665f80d879940, type: 3}
+    PlayOnAwake: 0
+    volume: 0.5
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 6714807091100367547, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+      type: 2}
+    source: {fileID: 0}
+  - name: MenuBlip
+    clip: {fileID: 8300000, guid: 70406310c1418a44f80a4df70463b505, type: 3}
+    PlayOnAwake: 0
+    volume: 0.5
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.5
+    loop: 0
+    mixerGroup: {fileID: 6714807091100367547, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+      type: 2}
+    source: {fileID: 0}
+  - name: Pause1
+    clip: {fileID: 8300000, guid: 5d5baf890fd6171448092704331b4178, type: 3}
+    PlayOnAwake: 0
+    volume: 0.5
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 6714807091100367547, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+      type: 2}
+    source: {fileID: 0}
+  - name: Pause2
+    clip: {fileID: 8300000, guid: 184d0d36d68a552468bfe798aa1d058d, type: 3}
+    PlayOnAwake: 0
+    volume: 0.5
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 6714807091100367547, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+      type: 2}
+    source: {fileID: 0}
+  - name: City
+    clip: {fileID: 8300000, guid: dec9083764affee4896866e7d51ed440, type: 3}
+    PlayOnAwake: 0
+    volume: 0.7
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 6714807091100367547, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+      type: 2}
+    source: {fileID: 0}
+  - name: MetalBonk
+    clip: {fileID: 8300000, guid: df248bc9bbdf6f843866b3b53ab65ae9, type: 3}
+    PlayOnAwake: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.3
+    loop: 0
+    mixerGroup: {fileID: 6714807091100367547, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+      type: 2}
+    source: {fileID: 0}
+  - name: End
+    clip: {fileID: 8300000, guid: 881bf52ee5d5c374896eb55633dad458, type: 3}
+    PlayOnAwake: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -1175721654007767591, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+      type: 2}
+    source: {fileID: 0}
+  - name: Remove
+    clip: {fileID: 8300000, guid: f097b92bbb5c928439de056c2a8d56de, type: 3}
+    PlayOnAwake: 0
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.25
+    loop: 0
+    mixerGroup: {fileID: -1175721654007767591, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+      type: 2}
+    source: {fileID: 0}
+--- !u!114 &6694987657434973899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6694987657434973902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad93f38c260663f4e9dd4a36e47ec455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music:
+  - name: A
+    parts:
+    - name: Percussion
+      clip: {fileID: 8300000, guid: c3a1f421fd969ec49a73de4d733db380, type: 3}
+      volume: 1
+      mixerGroup: {fileID: -8491804414365721183, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+        type: 2}
+      source: {fileID: 0}
+    - name: Melody
+      clip: {fileID: 8300000, guid: 9c47cda61d5ab474fb548ec71b46616a, type: 3}
+      volume: 1
+      mixerGroup: {fileID: 661032756077739892, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+        type: 2}
+      source: {fileID: 0}
+    - name: Bass
+      clip: {fileID: 8300000, guid: 486bf543dd46b3243bf0196fd9e62de9, type: 3}
+      volume: 1
+      mixerGroup: {fileID: 3286124274057883656, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+        type: 2}
+      source: {fileID: 0}
+    volume: 1
+    PlayOnAwake: 1
+    loop: 1
+    currentVolume: 0
+  - name: B
+    parts:
+    - name: Percussion
+      clip: {fileID: 8300000, guid: 4b18fda7c2321d74caedafcf765b1e82, type: 3}
+      volume: 1
+      mixerGroup: {fileID: -8491804414365721183, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+        type: 2}
+      source: {fileID: 0}
+    - name: Melody
+      clip: {fileID: 8300000, guid: 92fddc0c97d0cb542a9a35b1e0a6390b, type: 3}
+      volume: 1
+      mixerGroup: {fileID: 661032756077739892, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+        type: 2}
+      source: {fileID: 0}
+    - name: Bass
+      clip: {fileID: 8300000, guid: 057b2d25874fdfc4e83087f6bd2a90e8, type: 3}
+      volume: 1
+      mixerGroup: {fileID: 3286124274057883656, guid: 90f23edef13de694da0fa7ac56ffd5e1,
+        type: 2}
+      source: {fileID: 0}
+    volume: 0
+    PlayOnAwake: 1
+    loop: 1
+    currentVolume: 0
+  master: {fileID: 24100000, guid: 90f23edef13de694da0fa7ac56ffd5e1, type: 2}

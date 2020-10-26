@@ -8,9 +8,12 @@ public class HealthBar : MonoBehaviour
     public Image bar;
     [Range(0, 1)]
     public float target;
+    public Color normal;
+    Color normalColor;
     // Use this for initialization
     void Start()
     {
+        normalColor = normal;
     }
     private void FixedUpdate()
     {
@@ -22,7 +25,8 @@ public class HealthBar : MonoBehaviour
         {
             bar.fillAmount -= Time.deltaTime * Mathf.Abs(bar.fillAmount - target) * 2;
         }
-        bar.color = new Color(1, Mathf.Abs(bar.fillAmount - target) * 5, Mathf.Abs(bar.fillAmount - target) * 5, 0.7f);
+        normalColor = Color.Lerp(normalColor, normal, Time.deltaTime * 2);
+        bar.color = Color.Lerp(normalColor, new Color(1, 1, 1, 0.75f), Mathf.Abs(bar.fillAmount - target));
         gameObject.transform.localScale = new Vector3(0.5f + (bar.fillAmount - target) * 0.6f, 0.5f + (bar.fillAmount - target) * 0.6f, 1);
 
 
@@ -42,6 +46,10 @@ public class HealthBar : MonoBehaviour
     }
     public void SetColor(Color color)
     {
-        bar.color = color;
+        normal = color;
+    }
+    public Color GetColor()
+    {
+        return normal;
     }
 }

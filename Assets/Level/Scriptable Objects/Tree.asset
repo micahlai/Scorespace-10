@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Tree
   prefab: {fileID: 7466221969074908448, guid: bfbdc011704531e4ca8afae279e8eae5, type: 3}
-  spawnFrequency: 10
+  spawnFrequency: 5
   spawnRange: {x: -9, y: 9}
   yLevel: -0.03193608

@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Streetlamp
   prefab: {fileID: 2203520271860424169, guid: 524da60cf2d8b5748982cc78ce922221, type: 3}
   spawnFrequency: 20
-  spawnRange: {x: -9.53, y: -9.53}
+  spawnRange: {x: -11.48, y: -11.48}
   yLevel: -0.42

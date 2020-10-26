@@ -8,7 +8,7 @@ public class Ground : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<UnityEngine.AI.NavMeshSurface>().BuildNavMesh();
+        //FindObjectOfType<UnityEngine.AI.NavMeshSurface>().BuildNavMesh();
     }
 
     // Update is called once per frame

@@ -11,13 +11,25 @@ public class DirectionalControl : MonoBehaviour
     public Color[] directionColorsMain;
     public Color[] directionColorsShade;
     bool canActivate = true;
+    public bool despawn = true;
     public float Lifetime;
     float timer;
+    float activateTimer;
     // Start is called before the first frame update
     void Start()
     {
+        if (Placement.main != null)
+        {
+            ParticleSystem p = Instantiate(Placement.main.Dust, transform.position, Quaternion.Euler(new Vector3(-90, 0, 0))).GetComponent<ParticleSystem>();
+            ParticleSystem d = Instantiate(Placement.main.burst, transform.position, Quaternion.Euler(new Vector3(-90, 0, 0))).GetComponent<ParticleSystem>();
+            p.Play();
+            d.Play();
+            Destroy(p.gameObject, 5);
+            Destroy(d.gameObject, 5);
+        }
         canActivate = true;
         timer = Lifetime;
+        activateTimer = 3;
         if (pointDirection == Direction.Up)
         {
             ChangeArrowColors(1);
@@ -54,18 +66,22 @@ public class DirectionalControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        canActivate = activateTimer > 2 && !FindObjectOfType<Car>().dead && !FindObjectOfType<Car>().carveNavMesh.enabled;
         Vector3 p = new Vector3(FindObjectOfType<Car>().transform.position.x, transform.position.y, FindObjectOfType<Car>().transform.position.z);
-        if (Vector3.Distance(p, transform.position) < 0.1f && canActivate)
+        if (Vector3.Distance(p, transform.position) < 0.8f && canActivate)
         {
             FindObjectOfType<Car>().TurnCar(pointDirection);
             FindObjectOfType<Car>().transform.position = new Vector3(transform.position.x, FindObjectOfType<Car>().transform.position.y, transform.position.z);
             canActivate = false;
+            activateTimer = 0;
         }
         timer -= Time.deltaTime;
-        if(timer < 0)
+        if(timer < 0 && despawn)
         {
             Die();
         }
+        activateTimer += Time.deltaTime;
     }
     public void Die()
     {
@@ -75,7 +91,7 @@ public class DirectionalControl : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            canActivate = true;
+            //canActivate = true;
         }
     }
 }

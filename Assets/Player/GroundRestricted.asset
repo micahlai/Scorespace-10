@@ -15,5 +15,5 @@ MonoBehaviour:
   name: GroundRestricted
   prefab: {fileID: 7469245253702962405, guid: 80b3c700ce43945498c7aff1374d3930, type: 3}
   spawnFrequency: 30
-  spawnRange: {x: -37.14, y: -37.14}
+  spawnRange: {x: -46.6, y: -46.6}
   yLevel: -0.41

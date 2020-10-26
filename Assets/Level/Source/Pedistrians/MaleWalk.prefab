@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1496355883223439880}
   - component: {fileID: 1496355883223439881}
   - component: {fileID: 1496355883223439882}
-  - component: {fileID: 1496355883223439883}
   m_Layer: 0
   m_Name: MaleWalk
   m_TagString: Obstacle
@@ -63,7 +62,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 124
   m_CollisionDetection: 0
 --- !u!114 &1496355883223439882
 MonoBehaviour:
@@ -77,30 +76,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d70a8f7066aed94f9658e8b2b05c329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1496355883223439883}
   pedType: 1
---- !u!195 &1496355883223439883
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496355883223439877}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  speed: 0
+  materials:
+  - {fileID: 2100000, guid: 4512af05426b64549bbd9da531dfefe1, type: 2}
+  - {fileID: 2100000, guid: af9f726b2e4e4d54489fc113c9e9a9c0, type: 2}
 --- !u!95 &1496355883510509804
 Animator:
   serializedVersion: 3
@@ -182,6 +162,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 56550666424514442, guid: 54feabed9faea1a47a96720129784641,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3c541110112ee994288e444df69b5588, type: 2}
     - target: {fileID: 919132149155446097, guid: 54feabed9faea1a47a96720129784641,
         type: 3}
       propertyPath: m_Name

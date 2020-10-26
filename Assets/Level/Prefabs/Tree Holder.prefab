@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7466221968410196141}
   - component: {fileID: 7466221968410196140}
   - component: {fileID: 7466221968410196139}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3003,7 +3003,7 @@ GameObject:
   - component: {fileID: 7466221969074908449}
   - component: {fileID: 5237809263406133941}
   - component: {fileID: 6236487689292362452}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree Holder
   m_TagString: Obstacle
   m_Icon: {fileID: 0}

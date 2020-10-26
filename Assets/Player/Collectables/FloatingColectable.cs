@@ -13,6 +13,8 @@ public class FloatingColectable : MonoBehaviour
     public Vector2 frequencyRange;
      float frequency = 1f;
 
+    public string[] PlaySounds = { "Collect1", "Collect2", "Collect3", "Collect4" };
+
     public GameObject explode;
     public static GameObject explodeParticle;
     public UnityEvent OnCollected;
@@ -59,10 +61,16 @@ public class FloatingColectable : MonoBehaviour
     }
     void Explode()
     {
+        PlaySound();
         ParticleSystem p = Instantiate(explode, transform.position, transform.rotation).GetComponent<ParticleSystem>();
         p.Play();
         p.startColor = deathColor;
         Destroy(p.gameObject, 5);
         Destroy(gameObject);
+    }
+    void PlaySound()
+    {
+        int r = Mathf.RoundToInt(Random.Range(0.5f, PlaySounds.Length - 0.51f));
+        FindObjectOfType<AudioManager>().Play(PlaySounds[r]);
     }
 }
